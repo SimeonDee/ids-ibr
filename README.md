@@ -14,6 +14,6 @@ Network Intrusion Detection System (IDS) using KNN, RF, DT and SVM achieved 99.6
 ## Sample Screenshots
 
 - Evaluation on Train vs Test Datasets
-  ![Performances on Training vs Testing datasets](screenshots/perf_eval_results.png)
+  ![Performances on Training vs Testing datasets](screenshots/train_test_eval_results.png)
 - Models' Evaluations on Test sets
   ![All trained models performance evaluations](screenshots/perf_eval_results.png)
