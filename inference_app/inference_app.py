@@ -116,16 +116,21 @@ st.write(
 
 with st.sidebar:
     model_name = st.selectbox(
-        "Select Model", options=("Random Forest", "SVM", "KNN"), index=0
+        "Select Model",
+        options=("Random Forest", "SVM", "KNN"),
+        index=0,
     )
-    print(f"Model Name: {model_name}")
     model = load_model(model_name)
 
 
 with st.container(border=True):
-    st.markdown("##### Input Network Traffic Features")
+    st.markdown(
+        "##### <center>Input Network Traffic Features</center>",
+        unsafe_allow_html=True,
+    )
     st.write("---")
-    col1, col2 = st.columns([0.5, 0.5])
+
+    col1, _, col2 = st.columns([0.48, 0.04, 0.48])
 
     with col1:
         protocol_type = st.selectbox(
@@ -133,7 +138,11 @@ with st.container(border=True):
             options=PROTOCOL_DATA,
             index=0,
         )
-        service = st.selectbox("Service", options=SERVICE_SELECTION_DATA, index=0)
+        service = st.selectbox(
+            "Service",
+            options=SERVICE_SELECTION_DATA,
+            index=0,
+        )
         flag = st.selectbox("Flag", options=FLAG_DATA, index=1)
         src_bytes = st.number_input("Source Bytes", min_value=0)
         dest_bytes = st.number_input("Destination Bytes", min_value=0)
@@ -158,7 +167,10 @@ with st.container(border=True):
             value=0.5,
         )
         dst_host_srv_count = st.number_input(
-            "Destination Host Server Count", min_value=0, max_value=255, value=255
+            "Destination Host Server Count",
+            min_value=0,
+            max_value=255,
+            value=255,
         )
         dst_host_same_srv_rate = st.slider(
             "Destination Host Same Server Rate",
